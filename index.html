@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Weather App</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="src/styles.css" />
+
+    <script src="https://kit.fontawesome.com/006debe0ba.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="weather-side">
+            <div class="weather-gradient"></div>
+
+            <div class="date-container">
+                <h1 class="Day" id="date"></h1>
+                <p class="Hour" id="time"></p>
+                <p class="Date" id="currentMonth">March 15 2021 </p>
+
+                <form class="city-name" id="search-form">
+                    <input type="text" name="city" placeholder="Enter City" autofocus="on"
+                        class="form-control text-muted form-rounded p-2 shadow-sm" id="search-text-input" />
+                    <br />
+                    <button type="button" class="btn btn-secondary" id="current-location">Current Location</button>
+                </form>
+
+                <span class="location" id="city"></span>
+                <h2 class="weather-des" id="description"></h2>
+                <span class="weather-temp" id="temperature"></span>
+                <span class="weather-deg">
+                    <a href="#" id="fahrenheit-link">°F</a> |
+                    <a href="#" id="celsius-link">°C</a>
+                </span>
+                <br />
+                <div>
+                    <ul class="percentage-speed">
+                        <li>Humidity: <span id="humidity"></span>%</li>
+                        <li>Wind: <span id="wind"></span> km/h</li>
+                    </ul>
+                </div>
+            </div>
+            <br />
+            <br />
+            <div class="container">
+                <div class="row row-cols-auto">
+                    <div class="col-2-xs">
+                        <i class="fas fa-cloud"></i>
+                        <span>Monday</span>
+                        <p> 43°</p>
+                    </div>
+                    <div class="col-2-xs">
+                        <i class="fas fa-cloud"></i>
+                        <span>Tuesday</span>
+                        <p> 45°</p>
+                    </div>
+                    <div class="col-2-xs">
+                        <i class="fas fa-sun"></i>
+                        <span>Wednesday</span>
+                        <p> 57°</p>
+                    </div>
+                    <div class="col-2-xs">
+                        <i class="fas fa-sun"></i>
+                        <span>Thursday</span>
+                        <p> 52°</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    </div>
+    </div>
+    </div>
+    <script src="src/index.js"></script>
+</body>
+
+</html>
