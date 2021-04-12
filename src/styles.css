@@ -11,10 +11,12 @@ body {
   align-items: center;
 }
 
-.container {
+.container-wrap {
   border-radius: 25px;
+  margin: 15px;
+  padding: 15px;
   color: rgb(179, 179, 179);
-  height: 600px;
+  height: 550px;
 }
 .weather-side {
   position: relative;
@@ -34,24 +36,29 @@ body {
   opacity: 2px;
 }
 .date-container {
-  position: relative;
-  top: 20px;
-  left: 30px;
+  display: block;
+  margin: 20px;
+  padding: 20px;
 }
-.day-name h1 {
-  margin-top: 10px;
-  right: 100px;
+.Day {
+  top: 20%;
+  right: 20%;
+  font-size: 40px;
   color: rgb(179, 179, 179);
 }
 
-.date p {
+.Date {
   top: 10px;
   left: 10px;
-  font-size: 15px;
+  font-size: 20px;
   color: rgb(179, 179, 179);
 }
-.time {
+.Hour {
   margin-top: 0;
+  font: bold;
+  font-weight: 10px;
+  font-size: 18px;
+  color: rgb(179, 179, 179);
 }
 
 .location {
@@ -73,13 +80,16 @@ body {
 }
 
 .city-name {
-  width: 65%;
-  height: 65%;
-  padding: 5px;
-  margin-top: 5px;
-  margin-bottom: 10px;
-  right: 30px;
-  border-radius: 3em;
+  position: absolute;
+  top: 10%;
+  right: -15%;
+  transform: translate(-60%, -60%);
+  height: 38px;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 40px;
+  border-style: double;
+  color: white;
 }
 
 .fas-fa-cloud i {
@@ -92,16 +102,62 @@ body {
 .weather-temp {
   padding: 0;
   margin: 0;
-  font-weight: 200;
-  font-size: 65px;
+  font-weight: 250;
+  font-size: 80px;
   color: rgb(179, 179, 179);
 }
 .percentage-speed {
-  padding: 0px;
-  margin: 0px;
+  position: absolute;
+  text-align: right;
+  right: 15%;
+  padding: 5px;
+  margin: 5px;
   list-style: none;
   color: rgb(179, 179, 179);
 }
-.footer {
-  bottom: auto;
+
+.search-form {
+  text-align: center;
+  border: none;
+  color: rgb(179, 179, 179);
+  background: none;
+  outline: none;
+  padding: 1px;
+  margin: 1px;
+  font-weight: 17px;
+  font-size: 17px;
+  transition: 0.5s;
+  line-height: 20px;
+  width: 150px;
+}
+.search-loop {
+  position: absolute;
+  color: white;
+  top: 2%;
+  right: 1.01%;
+  margin: 0;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 45%;
+  background: rgb(179, 179, 179);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.city-name:hover {
+  width: 200px;
+  padding: 10px;
+  margin: 5px;
+  transition: 0.4s;
+  background: none;
+  color: rgb(179, 179, 179);
+}
+.link-code {
+  position: absolute;
+  left: 10%;
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 15px;
+  color: black;
 }

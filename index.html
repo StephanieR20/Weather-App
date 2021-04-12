@@ -20,7 +20,7 @@
 
 <body>
 
-    <div class="container">
+    <div class="container-wrap">
         <div class="weather-side">
             <div class="weather-gradient"></div>
 
@@ -29,14 +29,16 @@
                 <p class="Hour" id="time"></p>
                 <p class="Date" id="currentMonth">March 15 2021 </p>
 
+                 <div class="col-8">
                 <form class="city-name" id="search-form">
-                    <input type="text" name="city" placeholder="Enter City" autofocus="on"
-                        class="form-control text-muted form-rounded p-2 shadow-sm" id="search-text-input" />
-                    <br />
-                    <button type="button" class="btn btn-secondary" id="current-location">Current Location</button>
-                </form>
-
-                <span class="location" id="city"></span>
+                <input type="text" name="city" placeholder="Enter City" autofocus="on"
+                       class="search-form" class="form-control text-muted p-2 shadow-sm" id="search-text-input"/> 
+                      <button class="search-loop"><i class="fas fa-search"></i></button>
+                  </div>
+                    </form>
+                    
+                  
+           <span class="location" id="city"></span>
                 <h2 class="weather-des" id="description"></h2>
                 <span class="weather-temp" id="temperature"></span>
                 <span class="weather-deg">
@@ -53,9 +55,9 @@
             </div>
             <br />
             <br />
-            <div class="container">
+            <div class="row">
                 <div class="row row-cols-auto">
-                    <div class="col-2-xs">
+                    <div class="col-xs-1">
                         <i class="fas fa-cloud"></i>
                         <span>Monday</span>
                         <p> 43°</p>
@@ -79,12 +81,15 @@
 
             </div>
         </div>
-    </div>
-
+       
+      <small class="link-code">
+<a href="https://github.com/StephanieR20/Weather-App.git" target="-blank">
+Open-Source Code </a>, <strong> Stephanie Rubio </strong> 
+   </small>
     </div> 
-    <small class="footer"><a href="https://github.com/StephanieR20/Weather-App.git" target="-blank"> Open-Source Code </a>, by Stephanie Rubio</small>
-    </div>
    </div>
- <script src="src/index.js"></script>
+  </div> 
+</div>
+  <script src="src/index.js"></script>
 </body>
 </html>
