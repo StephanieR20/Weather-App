@@ -12,8 +12,9 @@ body {
 }
 
 .container-wrap {
+  max-width: 600px;
   border-radius: 25px;
-  margin: 15px;
+  margin: 30px auto;
   padding: 15px;
   color: rgb(179, 179, 179);
   height: 550px;
@@ -62,7 +63,7 @@ body {
 }
 
 .location {
-  display: inline-block;
+  text-align: center;
   margin-top: 10px;
   font-size: 30px;
   color: rgb(179, 179, 179);
@@ -74,9 +75,11 @@ body {
   color: rgb(179, 179, 179);
 }
 .weather-deg {
-  font-size: 20px;
-  font-weight: 10px;
+  position: relative;
+  top: -35px;
   margin: 0;
+  font-size: 25px;
+  font-weight: 10px;
 }
 
 .city-name {
@@ -92,13 +95,6 @@ body {
   color: white;
 }
 
-.fas-fa-cloud i {
-  right: 10px;
-  height: 40px;
-  width: auto;
-  color: darkgrey;
-  font-size: 15px;
-}
 .weather-temp {
   padding: 0;
   margin: 0;
@@ -107,11 +103,9 @@ body {
   color: rgb(179, 179, 179);
 }
 .percentage-speed {
-  position: absolute;
   text-align: right;
-  right: 15%;
-  padding: 5px;
-  margin: 5px;
+  padding: 0px;
+  margin: 0px;
   list-style: none;
   color: rgb(179, 179, 179);
 }
@@ -149,15 +143,17 @@ body {
   width: 200px;
   padding: 10px;
   margin: 5px;
-  transition: 0.4s;
+  transition: 0.5s;
   background: none;
   color: rgb(179, 179, 179);
+  cursor: pointer;
 }
 .link-code {
-  position: absolute;
-  left: 10%;
   margin-top: 10px;
   font-weight: bold;
   font-size: 15px;
   color: black;
+}
+.weather-icon img {
+  color: rgb(179, 179, 179);
 }
