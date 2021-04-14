@@ -79,7 +79,7 @@ function displayWeatherCondition(response) {
     response.data.weather[0].main;
 
    let iconElement= document.querySelector("#icon");
-   iconElement.setAttribute(`icons`);
+   iconElement.setAttribute(`src`,`icons/${response.data.weather[0].icon}.png`);
     
 }
 searchCity("Washington");
