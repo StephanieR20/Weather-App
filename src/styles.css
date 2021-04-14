@@ -84,8 +84,8 @@ body {
 
 .city-name {
   position: absolute;
-  top: 10%;
-  right: -15%;
+  top: 9%;
+  right: -16%;
   transform: translate(-60%, -60%);
   height: 38px;
   padding: 10px;
@@ -120,7 +120,7 @@ body {
   margin: 1px;
   font-weight: 17px;
   font-size: 17px;
-  transition: 0.5s;
+  transition: 0.4s;
   line-height: 20px;
   width: 150px;
 }
@@ -141,9 +141,9 @@ body {
 }
 .city-name:hover {
   width: 200px;
-  padding: 10px;
+  padding: 5px;
   margin: 5px;
-  transition: 0.5s;
+  transition: 00.3s;
   background: none;
   color: rgb(179, 179, 179);
   cursor: pointer;
@@ -154,6 +154,6 @@ body {
   font-size: 15px;
   color: black;
 }
-.weather-icon img {
+.weather-icon {
   color: rgb(179, 179, 179);
 }
