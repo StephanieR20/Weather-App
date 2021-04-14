@@ -41,19 +41,6 @@ function getForecast(coordinates) {
   axios.get(apiUrl).then(displayForecast);
   
 }
-
-
-
-
-
-
-function searchLocation(position) {
-  let apiKey = "e8354e1f3a17775f04c6aee104fac2d4";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(displayWeatherCondition);
-}
-
-
 function displayWeatherCondition(response) {
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML = Math.round(celsiusTemperature);
@@ -72,7 +59,7 @@ function displayWeatherCondition(response) {
     
 }
 
-function searchCity(event) {
+function searchCity(city) {
   let apiKey = "e8354e1f3a17775f04c6aee104fac2d4";
   let city = document.querySelector("#search-text-input").value;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
@@ -80,13 +67,18 @@ function searchCity(event) {
 }
 function handleSubmit(event) {
   event.preventDefault();
-  let cityInputElement = document.querySelector("#search-text-input").value;
-  searchCity(cityInputElement);
+  let city = document.querySelector("#search-text-input").value;
+  searchCity(city);
 }
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSubmit);
 
-searchCity("Washington");
+function searchLocation(position) {
+  let apiKey = "e8354e1f3a17775f04c6aee104fac2d4";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayWeatherCondition);
+}
+
 
 
 function displayFahrenheitTemperature (event){
@@ -116,3 +108,5 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
+
+searchCity("Washington DC");
