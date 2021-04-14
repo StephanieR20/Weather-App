@@ -41,6 +41,30 @@ function getForecast(coordinates) {
   axios.get(apiUrl).then(displayForecast);
   
 }
+
+
+function searchCity(city) {
+  let apiKey = "e8354e1f3a17775f04c6aee104fac2d4";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayWeatherCondition);
+}
+
+let city = document.querySelector("#search-text-input").value;
+
+function handleSubmit(event) {
+  event.preventDefault();
+  let city = document.querySelector("#search-text-input").value;
+  searchCity(city);
+}
+let searchForm = document.querySelector("#search-form");
+searchForm.addEventListener("submit", handleSubmit);
+
+function searchLocation(position) {
+  let apiKey = "e8354e1f3a17775f04c6aee104fac2d4";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayWeatherCondition);
+}
+
 function displayWeatherCondition(response) {
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML = Math.round(celsiusTemperature);
@@ -59,45 +83,24 @@ function displayWeatherCondition(response) {
     
 }
 
-function searchCity(city) {
-  let apiKey = "e8354e1f3a17775f04c6aee104fac2d4";
-  let city = document.querySelector("#search-text-input").value;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(displayWeatherCondition);
-}
-function handleSubmit(event) {
-  event.preventDefault();
-  let city = document.querySelector("#search-text-input").value;
-  searchCity(city);
-}
-let searchForm = document.querySelector("#search-form");
-searchForm.addEventListener("submit", handleSubmit);
-
-function searchLocation(position) {
-  let apiKey = "e8354e1f3a17775f04c6aee104fac2d4";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(displayWeatherCondition);
-}
-
-
-
 function displayFahrenheitTemperature (event){
  event.preventDefault();
  let temperatureElement = document.querySelector("#temperature");
- let fahrenheitTemperature=(celsiusTemperature * 9) /5 + 32;
- temperatureElement.innerHTML= Math.round(fahrenheitTemperature);
 
  celsiusLink.classList.remove("active");
  fahrenheitLink.classList.add("active");
+ let fahrenheitTemperature=(celsiusTemperature * 9) /5 + 32;
+ temperatureElement.innerHTML= Math.round(fahrenheitTemperature);
+
+ 
 }
 
 function displayCelsiusTemperature (event){
  event.preventDefault();
+ celsiusLink.classList.add("active");
+ fahrenheitLink.classList.remove("active");
  let temperatureElement = document.querySelector("#temperature");
  temperatureElement.innerHTML = Math.round(celsiusTemperature);
-
-celsiusLink.classList.add("active");
-fahrenheitLink.classList.remove("active");
 
 }
 
