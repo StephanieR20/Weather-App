@@ -43,20 +43,8 @@ function getForecast(coordinates) {
 }
 
 
-function searchCity(event) {
-  let apiKey = "e8354e1f3a17775f04c6aee104fac2d4";
-  let city = document.querySelector("#search-text-input").value;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(displayWeatherCondition);
-}
-function handleSubmit(event) {
-  event.preventDefault();
-  let city = document.querySelector("#search-text-input").value;
-  searchCity(city);
-}
 
-let searchForm = document.querySelector("#search-form");
-searchForm.addEventListener("submit", handleSubmit);
+
 
 
 function searchLocation(position) {
@@ -68,9 +56,8 @@ function searchLocation(position) {
 
 function displayWeatherCondition(response) {
   document.querySelector("#city").innerHTML = response.data.name;
-  document.querySelector("#temperature").innerHTML = Math.round(
-    response.data.main.temp
-  );
+  document.querySelector("#temperature").innerHTML = Math.round(celsiusTemperature);
+  
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
@@ -78,10 +65,54 @@ function displayWeatherCondition(response) {
   document.querySelector("#description").innerHTML =
     response.data.weather[0].main;
 
+  celsiusTemperature = response.data.main.temp;
+
    let iconElement= document.querySelector("#icon");
    iconElement.setAttribute(`src`,`icons/${response.data.weather[0].icon}.png`);
     
 }
+
+function searchCity(event) {
+  let apiKey = "e8354e1f3a17775f04c6aee104fac2d4";
+  let city = document.querySelector("#search-text-input").value;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayWeatherCondition);
+}
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#search-text-input").value;
+  searchCity(cityInputElement);
+}
+let searchForm = document.querySelector("#search-form");
+searchForm.addEventListener("submit", handleSubmit);
+
 searchCity("Washington");
 
 
+function displayFahrenheitTemperature (event){
+ event.preventDefault();
+ let temperatureElement = document.querySelector("#temperature");
+ let fahrenheitTemperature=(celsiusTemperature * 9) /5 + 32;
+ temperatureElement.innerHTML= Math.round(fahrenheitTemperature);
+
+ celsiusLink.classList.remove("active");
+ fahrenheitLink.classList.add("active");
+}
+
+function displayCelsiusTemperature (event){
+ event.preventDefault();
+ let temperatureElement = document.querySelector("#temperature");
+ temperatureElement.innerHTML = Math.round(celsiusTemperature);
+
+celsiusLink.classList.add("active");
+fahrenheitLink.classList.remove("active");
+
+}
+
+let celsiusTemperature = null;
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsiusTemperature);

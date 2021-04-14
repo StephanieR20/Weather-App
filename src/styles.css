@@ -157,3 +157,12 @@ body {
 .weather-icon {
   color: rgb(179, 179, 179);
 }
+
+.weather-deg .active {
+  color: gb(179, 179, 179);
+  cursor: default;
+}
+
+.weather-deg .active {
+  text-decoration: none;
+}
