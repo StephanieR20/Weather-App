@@ -1,7 +1,7 @@
 body {
   margin: 0;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   font-family: "Source Code Pro", monospace;
   background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   display: flex;
@@ -17,14 +17,14 @@ body {
   margin: 30px auto;
   padding: 15px;
   color: rgb(179, 179, 179);
-  height: 550px;
+  height: 650px;
 }
 .weather-side {
   position: relative;
   height: 100%;
   border-radius: 25px;
   background-image: url(https://images.unsplash.com/photo-1550507894-975103845538?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80);
-  width: 500px;
+  width: 600px;
 }
 
 .weather-gradient {
@@ -159,10 +159,25 @@ body {
 }
 
 .weather-deg .active {
-  color: gb(179, 179, 179);
+  color: rgb(179, 179, 179);
   cursor: default;
 }
 
 .weather-deg .active {
   text-decoration: none;
+}
+.weather-forecast {
+  margin-top: 20px;
+  text-align: center;
+  color: rgb(141, 138, 138);
+}
+.weather-forecast-date {
+  font-size: 16px;
+  opacity: 0.5px;
+}
+.weather-forecast-temperature-min {
+  opacity: 0.3px;
+}
+.weather-forecast-temperature {
+  font-size: 13px;
 }
