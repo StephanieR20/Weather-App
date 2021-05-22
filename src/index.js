@@ -35,6 +35,38 @@ let timeElement = document.querySelector("#time");
 let currentHour = new Date();
 timeElement.innerHTML = formatTime(currentHour);
 
+
+function displayForecast(){
+
+  let forecastElement = document.querySelector("#forecast");
+
+  let days = ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+  
+  
+  let forecastHTML= `<div class="row">`; 
+  days.forEach(function(day) {
+
+     forecastHTML =  forecastHTML + 
+     `<div class="weather-forecast" id="forecast">
+         <div class="col-2">
+        <div class="weather-forecast-date">${day}</div>
+        <img src="https://openweathermap.org/weather-conditions/icons/01d.png" alt=""/>
+         <div class="weather-forecast-temperature"> 
+          <span class="weather-forecast-temperature-max">18°</span>
+        <span class="weather-forecast-temperature-min"> 12° </span>
+       </div>
+       </div>`;
+
+  });
+
+   forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML= forecastHTML;
+
+  console.log(forecastHTML);
+}
+
+
+
 function getForecast(coordinates) {
   let apiKey = "e8354e1f3a17775f04c6aee104fac2d4";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
@@ -112,4 +144,7 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
+
 searchCity("Washington DC");
+
+displayForecast();

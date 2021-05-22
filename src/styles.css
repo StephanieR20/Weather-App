@@ -5,9 +5,9 @@ body {
   font-family: "Source Code Pro", monospace;
   background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   display: flex;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-position: center;
-  background-size: cover;
+  background-size: 900%;
   align-items: center;
 }
 
@@ -149,7 +149,7 @@ body {
   cursor: pointer;
 }
 .link-code {
-  margin-top: 10px;
+  margin-top: 0;
   font-weight: bold;
   font-size: 15px;
   color: black;
@@ -166,6 +166,7 @@ body {
 .weather-deg .active {
   text-decoration: none;
 }
+
 .weather-forecast {
   margin-top: 20px;
   text-align: center;
@@ -176,7 +177,7 @@ body {
   opacity: 0.5px;
 }
 .weather-forecast-temperature-min {
-  opacity: 0.3px;
+  opacity: 0.5px;
 }
 .weather-forecast-temperature {
   font-size: 13px;
