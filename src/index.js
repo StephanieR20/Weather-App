@@ -36,34 +36,34 @@ let currentHour = new Date();
 timeElement.innerHTML = formatTime(currentHour);
 
 
-function displayForecast(){
+//function displayForecast(){
 
-  let forecastElement = document.querySelector("#forecast");
+  //let forecastElement = document.querySelector("#forecast");
 
-  let days = ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+  //let days = ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
   
   
-  let forecastHTML= `<div class="row">`; 
-  days.forEach(function(day) {
+  //let forecastHTML= `<div class="row">`; 
+  //days.forEach(function(day) {
 
-     forecastHTML =  forecastHTML + 
-     `<div class="weather-forecast" id="forecast">
-         <div class="col-2">
-        <div class="weather-forecast-date">${day}</div>
-        <img src="https://openweathermap.org/weather-conditions/icons/01d.png" alt=""/>
-         <div class="weather-forecast-temperature"> 
-          <span class="weather-forecast-temperature-max">18°</span>
-        <span class="weather-forecast-temperature-min"> 12° </span>
-       </div>
-       </div>`;
+     //forecastHTML =  forecastHTML + 
+     //`<div class="weather-forecast" id="forecast">
+        // <div class="col-2">
+        //<div class="weather-forecast-date">${day}</div>
+        //<img src="https://openweathermap.org/weather-conditions/icons/01d.png" alt=""/>
+        // <div class="weather-forecast-temperature"> 
+         // <span class="weather-forecast-temperature-max">18°</span>
+       // <span class="weather-forecast-temperature-min"> 12° </span>
+      // </div>
+      // </div>`;
 
-  });
+ // });
 
-   forecastHTML = forecastHTML + `</div>`;
-  forecastElement.innerHTML= forecastHTML;
+  // forecastHTML = forecastHTML + `</div>`;
+  //forecastElement.innerHTML= forecastHTML;
 
-  console.log(forecastHTML);
-}
+ // console.log(forecastHTML);
+//}
 
 
 
